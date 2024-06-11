@@ -26,9 +26,9 @@ class SelectionPage extends StatelessWidget {
           MyButton(
             name: 'passenger',
             color: customYellow,
-            textcolor: white,
+            textColor: white,
           ),
-          MyButton(name: 'Driver', color: Colors.black, textcolor: white)
+          MyButton(name: 'Driver', color: Colors.black, textColor: white)
         ],
       ),
     );

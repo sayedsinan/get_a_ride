@@ -3,32 +3,36 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   final String name;
   final Color color;
-  final Color textcolor;
+  final Color textColor;
   const MyButton({
-    super.key,
+    Key? key,
     required this.name,
     required this.color,
-    required this.textcolor,
-  });
+    required this.textColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var sizeof = MediaQuery.of(context);
-    return ElevatedButton(
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        backgroundColor: color, // Use the color for the button background
-        padding: EdgeInsets.symmetric(
-            horizontal: sizeof.size.width * 0.3, vertical: 10),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+    return Container(
+      width: 200,
+      height: 100, // Set a fixed width for the button
+      child: ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(
+          backgroundColor: color, // Use the color for the button background
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 60),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
         ),
-      ),
-      child: Text(
-        name,
-        style: TextStyle(
-          fontSize: 20,
-          color: textcolor, // Use a contrasting color for text
+        child: Center(
+          child: Text(
+            name,
+            style: TextStyle(
+              fontSize: 20,
+              color: textColor, // Use a contrasting color for text
+            ),
+          ),
         ),
       ),
     );
