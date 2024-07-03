@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get_a_ride/color.dart';
 import 'package:get_a_ride/view/componenets/button.dart';
+import 'package:get_a_ride/view/passenger/login_page.dart';
 
 class SelectionPage extends StatelessWidget {
   const SelectionPage({super.key});
@@ -27,8 +29,21 @@ class SelectionPage extends StatelessWidget {
             name: 'passenger',
             color: customYellow,
             textColor: white,
+            onclick: () {
+              Get.to(()=>const MyLoginPage());
+            },
+            fontsize: 15,
           ),
-          MyButton(name: 'Driver', color: Colors.black, textColor: white)
+          const SizedBox(
+            height: 20,
+          ),
+          MyButton(
+            name: 'Driver',
+            color: Colors.black,
+            textColor: white,
+            onclick: () {},
+            fontsize: 15,
+          ),
         ],
       ),
     );

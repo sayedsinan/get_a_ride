@@ -16,17 +16,15 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 3), () {
       Get.off(
         SelectionPage(),
-        transition: Transition.fadeIn, // Use a fade-in transition
+        transition: Transition.fadeIn, 
         duration: Duration(milliseconds: 500),
       );
     });
   }
-
   Widget build(BuildContext context) {
     var sizeof = MediaQuery.of(context);
 

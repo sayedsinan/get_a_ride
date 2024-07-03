@@ -4,23 +4,27 @@ class MyButton extends StatelessWidget {
   final String name;
   final Color color;
   final Color textColor;
+  final VoidCallback? onclick;
+  final double fontsize;
   const MyButton({
     Key? key,
     required this.name,
     required this.color,
     required this.textColor,
+     this.onclick, required this.fontsize,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      height: 100, // Set a fixed width for the button
+    final sizeof = MediaQuery.of(context);
+    return SizedBox(
+      width: sizeof.size.width * 0.9,
+      height: sizeof.size.height * 0.08, // Set a fixed width for the button
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onclick,
         style: ElevatedButton.styleFrom(
           backgroundColor: color, // Use the color for the button background
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 60),
+          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 60),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -29,7 +33,7 @@ class MyButton extends StatelessWidget {
           child: Text(
             name,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: fontsize,
               color: textColor, // Use a contrasting color for text
             ),
           ),
