@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:get_a_ride/color.dart';
 import 'package:get_a_ride/view/componenets/button.dart';
 import 'package:get_a_ride/view/componenets/my_text_bar.dart';
@@ -15,10 +12,11 @@ class MyLoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController controller = TextEditingController();
     return Scaffold(
-        backgroundColor: back,
-        body: Column(children: [
-          SizedBox(
-            height: 100,
+      backgroundColor: back,
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 200,
           ),
           MyTextField(
             hintText: 'hintText',
@@ -33,15 +31,28 @@ class MyLoginPage extends StatelessWidget {
             controller: controller,
             color: Colors.white,
           ),
-          Row(
-            children: [Text('Forgot password?')],
+          const SizedBox(
+            height: 10,
           ),
-          MyButton(
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  'Forgot password?',
+                  style: TextStyle(color: Colors.red),
+                ),
+              )
+            ],
+          ),
+          const MyButton(
               name: 'Login',
-              color: Colors.white,
+              color:Color(0xFFFAD303),
               textColor: white,
               fontsize: 15),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Divider(
@@ -50,14 +61,19 @@ class MyLoginPage extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text('or'),
+                child: Text(
+                  'or',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               Divider(
-                color: Colors.black,
+                color: Colors.white,
                 height: 2,
               ),
             ],
           ),
-        ]));
+        ],
+      ),
+    );
   }
 }
