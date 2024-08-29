@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get_a_ride/color.dart';
 import 'package:get_a_ride/view/componenets/button.dart';
 import 'package:get_a_ride/view/passenger/otp/otp_boxes.dart';
+
+import '../profile/profile_page.dart';
 
 class OtpPage extends StatefulWidget {
   const OtpPage({super.key});
@@ -70,7 +73,7 @@ class _OtpPageState extends State<OtpPage> {
             name: 'Register ',
             color: customYellow,
             textColor: white,
-            onclick: () {},
+            onclick: () =>Get.to( const ProfilePage()),
             fontsize: 15,
             height: sizeof.height * 0.06,
             width: sizeof.width * 0.9,
