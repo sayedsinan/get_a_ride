@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_a_ride/color.dart';
 import 'package:get_a_ride/view/componenets/button.dart';
-import 'package:get_a_ride/view/passenger/login_page.dart';
+
+import '../passenger/login/login_page.dart';
 
 class SelectionPage extends StatelessWidget {
   const SelectionPage({super.key});
@@ -25,17 +26,20 @@ class SelectionPage extends StatelessWidget {
                   'asset/Screenshot_2024-06-10_125340-removebg-preview.png')
             ],
           ),
-          SizedBox(height:sizeof.height*0.2 ,),
+          SizedBox(
+            height: sizeof.height * 0.2,
+          ),
           MyButton(
             name: 'passenger',
             color: customYellow,
             textColor: white,
             onclick: () {
-              Get.to(()=>const MyLoginPage());
+              Get.to(() => const MyLoginPage());
             },
-            fontsize: 15, height: sizeof.height*0.02,
-
-width: sizeof.width*0.02,          ),
+            fontsize: 15,
+            height: sizeof.height * 0.07,
+            width: sizeof.width * 0.8,
+          ),
           const SizedBox(
             height: 20,
           ),
@@ -44,7 +48,9 @@ width: sizeof.width*0.02,          ),
             color: Colors.black,
             textColor: white,
             onclick: () {},
-            fontsize: 15, height: sizeof.height*0.02, width: sizeof.width*0.02,
+            fontsize: 15,
+            height: sizeof.height * 0.07,
+            width: sizeof.width * 0.8,
           ),
         ],
       ),
