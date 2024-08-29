@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:get_a_ride/color.dart';
 import 'package:get_a_ride/view/componenets/button.dart';
@@ -10,6 +12,7 @@ class MyLoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeof=MediaQuery.of(context).size;
     TextEditingController controller = TextEditingController();
     return Scaffold(
       backgroundColor: back,
@@ -19,7 +22,7 @@ class MyLoginPage extends StatelessWidget {
             height: 200,
           ),
           MyTextField(
-            hintText: 'hintText',
+            hintText: 'Please enter your email',
             controller: controller,
             color: Colors.white,
           ),
@@ -27,7 +30,7 @@ class MyLoginPage extends StatelessWidget {
             height: 10,
           ),
           MyTextField(
-            hintText: 'hintText',
+            hintText: 'Please Enter your password',
             controller: controller,
             color: Colors.white,
           ),
@@ -47,17 +50,18 @@ class MyLoginPage extends StatelessWidget {
               )
             ],
           ),
-          const MyButton(
-              name: 'Login',
-              color:Color(0xFFFAD303),
-              textColor: white,
-              fontsize: 15),
-          const Row(
+           MyButton(
+            name: 'passenger',
+            color: customYellow,
+            textColor: white,
+            onclick: () {},
+            fontsize: 15, height: sizeof.height*0.06, width: sizeof.width*0.9,)
+          ,const  Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Divider(
-                color: Colors.black,
-                height: 2,
+                color: Colors.white,
+                height: 5,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -72,6 +76,14 @@ class MyLoginPage extends StatelessWidget {
               ),
             ],
           ),
+          Row(children: [
+            Image.asset('asset/Screenshot_2024-07-09_125819-removebg-preview.png'),
+            Image.asset('asset/Screenshot_2024-07-09_125823-removebg-preview.png')
+          ],),
+          Row(children: [
+            Text("Don't have an account ? ",style: TextStyle(color: white),),
+            Text('Sign Up',style: TextStyle(color: customYellow))
+          ],)
         ],
       ),
     );

@@ -9,13 +9,13 @@ class SelectionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var sizeof = MediaQuery.of(context);
+    var sizeof = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: back,
       body: Column(
         children: [
           SizedBox(
-            height: sizeof.size.height * 0.2,
+            height: sizeof.height * 0.2,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,6 +25,7 @@ class SelectionPage extends StatelessWidget {
                   'asset/Screenshot_2024-06-10_125340-removebg-preview.png')
             ],
           ),
+          SizedBox(height:sizeof.height*0.2 ,),
           MyButton(
             name: 'passenger',
             color: customYellow,
@@ -32,8 +33,9 @@ class SelectionPage extends StatelessWidget {
             onclick: () {
               Get.to(()=>const MyLoginPage());
             },
-            fontsize: 15,
-          ),
+            fontsize: 15, height: sizeof.height*0.02,
+
+width: sizeof.width*0.02,          ),
           const SizedBox(
             height: 20,
           ),
@@ -42,7 +44,7 @@ class SelectionPage extends StatelessWidget {
             color: Colors.black,
             textColor: white,
             onclick: () {},
-            fontsize: 15,
+            fontsize: 15, height: sizeof.height*0.02, width: sizeof.width*0.02,
           ),
         ],
       ),
